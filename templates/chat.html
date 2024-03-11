@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chat App</title>
+    <style>
+        /* Add your custom CSS styles here */
+        .message {
+            background-color: #f2f2f2;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="chat-container">
+        <div id="chat-header">
+            <h1>Chat App</h1>
+        </div>
+        <div id="chat-content">
+            <div id="messages">
+                <!-- Messages will be inserted here -->
+                {% for message in messages %}
+                    <div class="message">
+                        {{ message.sender }}: {{ message.body }}
+                    </div>
+                {% endfor %}
+            </div>
+            <div id="message-box">
+                <form id="message-form" method="POST" action="send">
+                    <input type="text" id="message" name="message" placeholder="Enter your message here...">
+                    <button id="send-message">Send</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Add your JavaScript code here
+    </script>
+</body>
+</html>
